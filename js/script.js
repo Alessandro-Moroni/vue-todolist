@@ -39,8 +39,10 @@ createApp({
       }
     },
 
-    deleteTask(index){
-      this.listTodo.splice(index, 1)
+    deleteTask(index, task){
+      if(task.cross === true){
+        this.listTodo.splice(index, 1)
+      }
     }
   }
 }).mount('#app');
