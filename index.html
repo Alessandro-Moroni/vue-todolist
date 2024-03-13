@@ -44,7 +44,7 @@
       <ul>
         <li v-for="(task, index) in listTodo">
           <span :class="{'done' : task.cross === true}">{{task.word}}</span>
-          <i class="fa-solid fa-trash-can"></i>
+          <i class="fa-solid fa-trash-can" @click="eliminaTask"></i>
         </li>
     
       </ul>
