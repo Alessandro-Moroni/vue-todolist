@@ -5,7 +5,15 @@ createApp({
     return{
       listTodo:[
        {
-        word:'ciaoooo',
+        word:'spesa',
+        cross: true,
+        },
+       {
+        word:'correre',
+        cross: false,
+        },
+       {
+        word:'pulire casa',
         cross: false,
         }
       ],
@@ -19,9 +27,11 @@ createApp({
 
   methods:{
     addTask(){
+      
       if(this.taskEl.length > 5){
+        const newEl = {word:this.taskEl}
+        this.listTodo.unshift(newEl)
 
-        this.listTodo.unshift(this.taskEl);
         this.taskEl = '';
         this.errorMsg = '';
       }else{
@@ -29,7 +39,7 @@ createApp({
       }
     },
 
-    eliminaTask(index){
+    deleteTask(index){
       this.listTodo.splice(index, 1)
     }
   }
