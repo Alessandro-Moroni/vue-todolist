@@ -38,11 +38,14 @@ createApp({
         this.errorMsg = 'Attenzione deve contenere almeno 5 caratteri';
       }
     },
-
+    
     deleteTask(index, task){
       if(task.cross === true){
         this.listTodo.splice(index, 1)
+      }else{
+        this.errorMsg = 'La task non è stata completata';  
       }
     }
+    
   }
 }).mount('#app');
